@@ -1,67 +1,285 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+মডিউল ৮ এর এসাইনমেন্ট
+***NB: Do not submit your assignment before “Assignment Question Analysis” Class.***
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+ 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Task:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+ 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Create a `get` route called `/profile` with a required parameter `id`, which will connect to a controller named `ProfileController`. This ProfileController should have only one public method called `index`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+ 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+The `index` method will receive the `$id` as a route parameter.  Inside the `index` method declare two variables called `$name` and set the value “Donal Trump” and the `$age` value will be “75”. The values of both variables must be in double quotation.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# php-module-8-assignment" 
+
+ 
+
+
+
+
+Then make a `$data` variable to store the `$id` as well as the declared variables $name and $age as an associative array. The name of the keys will be the same.
+
+
+
+
+ 
+
+
+
+
+Also make a cookie; name as `access_token` , value  as `123-XYZ` , minutes as 1, path as ‘/’, domain as $_SERVER[‘SERVER_NAME’], secure as false and httpOnly as true.
+
+
+
+
+ 
+
+
+
+
+Return this data as response with status-code `200` and cookie.
+
+
+
+
+
+
+
+
+*Note that the template is only for your understanding purpose. Do not just copy paste this template in your project. Make necessary changes like renaming the variables, route, method and complete the whole task according to the question. Also do not add the template’s comment in your file/code. Those are just instructions.
+
+
+ 
+
+
+====Template  Starts======
+
+
+ 
+
+
+Route File:
+
+
+<?php
+
+
+ 
+
+
+use Illuminate\Support\Facades\Route;
+
+
+use App\Http\Controllers\ProfileController;
+
+
+ 
+
+
+Route::get('/yourRouteName/{yourRequiredParameter}’, [YourController::class, 'yourMethod']);
+
+
+
+
+
+
+Controller File:
+
+
+ 
+
+
+<?php
+
+
+ 
+
+
+namespace App\Http\Controllers;
+
+
+ 
+
+
+class ProfileController extends Controller
+
+
+{
+
+
+public function index($yourRequiredParameter){
+
+
+ 
+
+
+// Declare your variables and assign the values stated in Question
+
+
+   $name = “” ;
+
+
+   $age = “” ;
+
+
+
+
+
+
+//add three variables in $data variable as associative array with values stated in the question
+
+
+   $data = [
+
+
+…….
+
+
+…….
+
+
+……
+
+
+   ];
+
+
+ 
+
+
+//Set your cookie variables stated in the question
+
+
+$name = ‘’;
+
+
+$value = ‘’;
+
+
+$minutes = ‘’;
+
+
+$path = ‘’;
+
+
+$domain = ‘’;
+
+
+$secure = ‘’;
+
+
+$httpOnly = ‘’;
+
+
+ 
+
+
+   //add the return statement with the response method along with $data and status-code and set the cookie stated in the question.
+
+
+………
+
+
+………
+
+
+ 
+
+
+}
+
+
+ 
+
+
+}
+
+
+ 
+
+
+=====Template  Ends=====
+
+
+
+
+
+
+Expected Output
+
+
+=====================
+
+
+(No Need to add the output in your answer, not even by commenting. This is just for you, to check if your code is working correctly or not):
+
+
+ 
+
+
+{
+
+
+     "id": "yourRequiredParameter", (It can be any number what is passed in the route)
+
+
+     "name": "Donal Trump",
+
+
+     "age": "75"
+
+
+}
+
+
+ 
+
+
+Also check whether the cookie is set properly.
+
+
+=====================
+
+
+
+
+
+
+Submission Guidelines:
+
+
+ 
+
+
+1. Please do not try to be oversmart. Unnecessary or extra code like route, method and comment are not allowed. Your task-related files should only contain the task related code. 
+
+
+2. Must Submit Github link.
+
+
+3. Must Create a Fresh New Repository and this repository should have only Laravels folders and files.
+
+
+4. Don't push the folder where your project is created. So that we don't need to go inside that folder.
+
+
+5. Must see this Demo image before submitting: 
+
+
+https://drive.google.com/file/d/19B1kkA5oGWe6aUIjI1lAdZsEyoJZfX6U/view?usp=sharing
